@@ -30,7 +30,6 @@ public class UserDaoImp implements UserDao {
 
    @Override
    public User findUserByCar(String model, Integer series) {
-      User user = new User();
       Query query = sessionFactory.getCurrentSession().createQuery("from User as us where us.car.model=:m " +
               "and us.car.series=:s");
       query.setParameter("m",model);
